@@ -40,7 +40,7 @@ Content-Type: text/plain; charset="UTF-8";
 
 {letter_template}
 
-dvmn.org — это новая версия онлайн-курса...""".format(email_from=email_login, email_to=email_to, letter_subject="Приглашение!", letter_template=letter_template)
+""".format(email_from=email_login, email_to=email_to, letter_subject="Приглашение!", letter_template=letter_template)
 
 letter = letter.encode("UTF-8")
 
@@ -54,4 +54,5 @@ mailru_host = 'smtp.mail.ru'
 server = smtplib.SMTP_SSL(ya_host, ya_port)
 server.login(email_login, email_pass)
 server.sendmail(email_login, email_to, letter)
+
 server.quit()
